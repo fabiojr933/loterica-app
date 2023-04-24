@@ -2,7 +2,6 @@
 import * as React from 'react';
 import { NavigationContainer, NavigationContext } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Loteria from './src/pages/loteria';
 import Home from './src/pages/Home';
 
 import { MD3LightTheme, Provider as PaperProvider } from 'react-native-paper';
@@ -36,7 +35,6 @@ function App() {
           headerStyle: { backgroundColor: '#3498db' },
         }}>
           <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Loteria" component={Loteria} />
         </Stack.Navigator>
       </PaperProvider>
     </NavigationContainer>
