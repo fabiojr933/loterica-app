@@ -1,12 +1,13 @@
 
 import * as React from 'react';
-import { NavigationContainer, NavigationContext } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './src/pages/Home';
-
 import { MD3LightTheme, Provider as PaperProvider } from 'react-native-paper';
-
 const Stack = createNativeStackNavigator();
+import { LogBox } from 'react-native';
+LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs();//Ignore all log notifications
 
 function App() {
 
@@ -34,7 +35,9 @@ function App() {
           headerTintColor: 'white',
           headerStyle: { backgroundColor: '#3498db' },
         }}>
-          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen options={{
+            title: 'Resultado da loteria'
+          }} name="Home" component={Home} />
         </Stack.Navigator>
       </PaperProvider>
     </NavigationContainer>
